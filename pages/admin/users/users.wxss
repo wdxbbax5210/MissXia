@@ -1,0 +1,33 @@
+/* pages/admin/users/users.wxss */
+
+.searchBox {
+  position: relative;
+}
+
+.searchBox i {
+  position: absolute;
+  line-height: 1.7em;
+  right: 0.2rem;
+}
+
+ul {
+  border-top: 1px solid #f1f1f1;
+  line-height: 2.8em;
+}
+
+.item {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.btnbox {
+  height: 100%;
+  line-height: 1.4rem;
+  color: #fff;
+}
+
+.btnbox div {
+  cursor: pointer;
+  float: left;
+}

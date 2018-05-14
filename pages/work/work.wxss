@@ -1,0 +1,30 @@
+/** work.wxss **/
+
+swiper swiper-item image {
+  width: 100%;
+  height: 150px;
+}
+
+.demo-nav {
+  display: block;
+}
+
+.demo-nav div {
+  border-left: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  display: block;
+}
+
+.demo-nav a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.demo-nav p {
+  display: block;
+}
+
+.demo-nav div:nth-child(4n+1) {
+  border-left: none;
+}

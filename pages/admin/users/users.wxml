@@ -1,0 +1,36 @@
+<!--pages/admin/users/users.wxml-->
+<scroll-view class="fadeIn animated" scroll-y="true">
+  <div class="searchBox m2">
+    <i class="icon iconfont icon-search f44"></i>
+    <!-- type=search 的input，会在手机键盘上生成一个搜索按钮 -->
+    <input type="search" class="radius15 form-control f80 pl2 pr2" placeholder="请输入内容" />
+  </div>
+  <div class="f160 color3 bg-color7 t-c">
+    <ul id="swiper" class="o-h clearfix">
+      <view wx:for="{{userList}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}">
+        <li class="item h28">
+          <div class="fl" style="width:100%">
+            <div class="fl w50 h28">
+              <image src="../../../images/img/user2.jpg" class="w24 h24 radius-o" />
+            </div>
+            <div class="fl h28 t-l pt2 color4">
+              <div class="f36 clearfix">
+                <p class="fr f80 mr2 t-r"><view>{{item.userId}}</view></p>
+                <p class="fl f80 color3"><view>{{item.userName}}</view></p>
+              </div>
+              <p class="f50 nowrap">起床了吗？</p>
+            </div>
+          </div>
+          <div class="btnbox fl">
+            <div class="w15 bg-color-warning">
+              <i class="icon iconfont icon-fanhuidingbu"></i>
+            </div>
+            <div class="w15 bg-color-danger">
+              <i class="icon iconfont icon-deletefill"></i>
+            </div>
+          </div>
+        </li>
+      </view>
+    </ul>
+  </div>
+</scroll-view>

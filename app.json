@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/admin/users/users",
     
     "pages/work/work",
-    "pages/admin/users/users",
     "pages/list/list",
     "pages/mine/mine",
     "pages/new/new",

@@ -1,33 +1,418 @@
 /* pages/admin/users/users.wxss */
 
-.searchBox {
-  position: relative;
+input, textarea, select {
+  font-size: 32rpx;
+  font-family: "微软雅黑";
+  color: #333;
 }
 
-.searchBox i {
-  position: absolute;
-  line-height: 1.7em;
-  right: 0.2rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-ul {
-  border-top: 1px solid #f1f1f1;
-  line-height: 2.8em;
+.page-header {
+  display: flex;
+  font-size: 32rpx;
+  color: #aaa;
+  margin-top: 50rpx;
+  flex-direction: column;
+  align-items: center;
 }
 
-.item {
+.page-header-text {
+  padding: 20rpx 40rpx;
+}
+
+.page-header-line {
+  width: 150rpx;
+  height: 1px;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-body {
   width: 100%;
-  display: block;
-  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  overflow-x: hidden;
 }
 
-.btnbox {
-  height: 100%;
-  line-height: 1.4rem;
+.green {
+  color: #09bb07;
+}
+
+.red {
+  color: #f76260;
+}
+
+.blue {
+  color: #10aeff;
+}
+
+.yellow {
+  color: #ffbe00;
+}
+
+.gray {
+  color: #c9c9c9;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.bc_green {
+  background-color: #09bb07;
+}
+
+.bc_red {
+  background-color: #f76260;
+}
+
+.bc_blue {
+  background-color: #10aeff;
+}
+
+.bc_yellow {
+  background-color: #ffbe00;
+}
+
+.bc_gray {
+  background-color: #c9c9c9;
+}
+
+.tc {
+  text-align: center;
+}
+
+.page input {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
+
+checkbox, radio {
+  margin-right: 10rpx;
+}
+
+.btn-area {
+  padding: 0 30px;
+}
+
+.btn-area button {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.page {
+  min-height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tags {
+  border: 1rpx solid #bb2c08;
+  color: #bb2c08;
+  font-size: 20rpx;
+  line-height: 1;
+  margin-right: 10rpx;
+  padding: 3rpx 8rpx;
+}
+
+.box-txt-e {
+  text-overflow: ellipsis;
+  display: box;
+  box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+#pageplay {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background: rgba(33, 33, 33, 0.8);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  z-index: 100;
+  align-items: center;
+}
+
+#pp_pic {
+  flex: 0 0 70rpx;
+  text-align: center;
+  border-radius: 50%;
+  padding: 15rpx;
+}
+
+#pp_playing {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 15rpx;
+  z-index: 2;
+}
+
+#pageplay image {
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: top;
+}
+
+#pp_name {
+  flex: 1;
+  overflow: hidden;
+  line-height: 1.6;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+#pp_name view {
+  height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+#pp_name #ppn_des {
+  font-size: 22rpx;
+  color: #eee;
+}
+
+#pp_action {
+  display: flex;
+  align-items: center;
+  padding: 0 5rpx;
+}
+
+#pp_action .pa-baction {
+  padding: 0 5rpx;
+  flex: 0 0 auto;
+}
+
+#pageplay #pp_next {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.page_pp {
+  padding-bottom: 100rpx;
+}
+
+.page_loading {
+  text-align: center;
+  padding: 20rpx;
+  display: block;
+}
+
+.pp_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.pp_main {
+  background: rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  z-index: 101;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.ppm_header {
+  border-bottom: 1rpx solid #ccc;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ppm_header image {
+  vertical-align: middle;
+}
+
+.pph_cnt {
+  display: flex;
+}
+
+.pph_cnt view {
+  padding-left: 20rpx;
+}
+
+.ppm_footer {
+  border-top: 1rpx solid #ccc;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.ppm_content {
+  max-height: 600rpx;
+  overflow: auto;
+}
+
+.ppm_content scroll-view {
+  height: 600rpx;
+}
+
+.ppm_content .menu .cmain {
+  border-bottom-color: #ccc;
+}
+
+.ppm_content .flexlist .flexlist {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.ppm_content .flexlist .flexmain text {
+  font-size: 26rpx;
+}
+
+.userprofiles .flexmain image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.userprofiles .fl-image image {
+  border-radius: 50%;
+}
+
+#search_input {
+  padding: 0 0 20rpx 20rpx;
+  background-color: #39b5de;
+  overflow: hidden;
+  height: 60rpx;
+  flex: 0 0 60rpx;
   color: #fff;
 }
 
-.btnbox div {
-  cursor: pointer;
-  float: left;
+#search_input .form {
+  display: flex;
 }
+
+.form_input {
+  flex: 1;
+  position: relative;
+  color: #fff;
+  height: 60rpx;
+  overflow: hidden;
+}
+
+.form_input view {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  padding: 12rpx 15rpx;
+}
+
+.form_input .sf_clear {
+  right: 0;
+  left: auto;
+}
+
+#search_input input {
+  border: none;
+  color: #515151;
+  background-color: #ececec;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: block;
+}
+
+.button button {
+  padding: 0 20rpx;
+  height: 60rpx;
+  border: none;
+  line-height: 60rpx;
+  display: block;
+  text-align: right;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+#search_result {
+  height: 100%;
+  padding-top: 161rpx;
+  box-sizing: border-box;
+}
+
+#search_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+#search_tab {
+  overflow-x: auto;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+}
+
+#search_hot {
+  padding: 60rpx 0;
+  min-height: 100rpx;
+}
+
+.tab .tab-item {
+  flex: 0 0 160rpx;
+}
+
+.vhidden {
+  visibility: hidden;
+}
+
+.sm_title {
+  font-size: 28rpx;
+  margin: 0;
+}
+
+#re_search_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sr_lists icon {
+  vertical-align: top;
+}
+
+.sr_lists image {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top;
+}
+
+.search_relist {
+  height: 100%;
+  padding-top: 161rpx;
+  box-sizing: border-box;
+}
+
+.seare_list {
+  height: 100%;
+}
+
+.seare_list scroll-view {
+  height: 100%;
+}
+@import "../../../utils/common.wxss"
